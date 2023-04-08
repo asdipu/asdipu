@@ -1,0 +1,19 @@
+public static int isMadhavArray(int[] a) {
+    int n = 0;
+    while (n * (n + 1) / 2 < a.length) {
+        n++;
+    }
+    if (n * (n + 1) / 2 != a.length) {
+        return 0;
+    }
+    for (int i = 1; i <= n; i++) {
+        int sum = 0;
+        for (int j = i * (i - 1) / 2; j < i * (i + 1) / 2; j++) {
+            sum += a[j];
+        }
+        if (sum != a[0]) {
+            return 0;
+        }
+    }
+    return 1;
+}
