@@ -1,3 +1,9 @@
+((A Madhav array has the following property.
+ a[0] = a[1] + a[2] = a[3] + a[4] + a[5] = a[6] + a[7] + a[8] + a[9] = ...
+The length of a Madhav array must be n*(n+1)/2 for some n.))
+
+
+
 public static int isMadhavArray(int[] a) {
     int n = 0;
     while (n * (n + 1) / 2 < a.length) {
@@ -17,3 +23,6 @@ public static int isMadhavArray(int[] a) {
     }
     return 1;
 }
+
+
+
