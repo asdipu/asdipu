@@ -1,0 +1,18 @@
+public static int computeDepth(int n){
+      boolean[] array = new boolean[10];
+      int count =0;
+      int depth =0;
+      while(count<10){
+         depth++;
+         int multiple = n * depth;
+         while(multiple>0){
+         int digit = multiple%10;
+         if(!array[digit]){
+         array[digit]= true;
+         count++;
+         }
+         multiple /=10;
+         }
+      }
+      return depth;
+   }
