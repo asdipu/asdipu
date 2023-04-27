@@ -1,0 +1,24 @@
+public class Main{
+  public static void main(String[] args){
+    System.out.println(isTrivalent(new int[]  {22, 19, 10, 10, 19, 22, 22, 10} ));
+  }
+  public static int isTrivalent(int[] a){
+    int[] array = new int[3];
+    if(a.length==0) return 0;
+    int count =0;
+      for(int i=0;i<a.length;i++){
+        boolean trivalent = true;
+          for(int j=0;j<count;j++){
+            if(a[i]==array[j]){
+              trivalent = false;
+              break;
+            }
+          }
+          if(trivalent){
+            if(count==3) return 0;
+            array[count++]=a[i];
+          }
+     }
+     return count==3? 1 : 0;
+  }
+}
