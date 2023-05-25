@@ -1,0 +1,15 @@
+public static void updateMileage(int[] mileage,int miles){
+  for(int i=0;i<miles;i++){
+     addOne(mileage);
+  }
+}
+public static void addOne(int[] mileage){
+  for(int i = a.length-1;i>=0;i--){
+    if(mileage[i]==9){
+      mileage[i]=0;
+    }else{
+      mileage[i]++;
+      break;
+    }
+  }
+}
