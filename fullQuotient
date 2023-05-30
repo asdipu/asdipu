@@ -1,0 +1,19 @@
+int isFullQuotient{
+  if(n<1) return -1;
+  int count =0;
+  for(int base=2;base<=9;base++){
+      boolean hasZero=false;
+      int temp=n;
+      while(temp>0){
+         if(temp%base==0){
+            hasZero = true;
+            break;
+         }
+         temp /= base;
+      }
+      if(!hasZero){
+       count++;
+      }
+  }
+  return count;
+}
