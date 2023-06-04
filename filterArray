@@ -1,0 +1,23 @@
+int[] filterArray(int[] a,int n){
+   int count =0;
+   int temp = n;
+   while(temp>0){
+      if(temp%2==1){
+         count++;
+      }
+      temp /= 2;
+   }
+   int[] arr = new int[count];
+   int i= 0;
+   temp = n;
+   count = 0;
+   while(temp>0){
+      if(i>=a.length) return null;
+      if(temp%2==1){
+         arr[count++]= a[i];
+      }
+      i++;
+      temp /= 2;
+   }
+   return arr;
+}
