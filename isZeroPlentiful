@@ -11,7 +11,8 @@ int isZeroPlentiful(int[] a){
       countZero=0;
     }
   }
-  if(countZero>=4){
+  if(countZero>0 && countZero<4) return 0;
+  else if(countZero>=4){
     zeroPlenti++;
   }
   return zeroPlenti;
