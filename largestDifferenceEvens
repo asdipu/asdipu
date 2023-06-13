@@ -1,17 +1,16 @@
-int largestDifferenceEven(int[] a){
-   int largestdiff = -1;
-   int firsteven = -1;
-   for(int i=0;i<a.lenght;i++){
-     if(a[i]%2==0){
-         if(firsteven== -1){
-           firsteven = i;
-           }
-        else{
-           int diff = a[i]-a[firsteven];
-           if(diff>largestdiff){
-             largestdiff = diff;
-            }
-           }
-          }
-         }
-         return largestdiff;
+int max
+int min
+int counteven
+for(int i =0;i<a.length;i++){
+  if(a[i]%2==0){
+     counteven++;
+     if(a[i]>max){
+       max = a[i];
+     }
+     if(a[i]<min){
+       min = a[i];
+     }
+  }
+}
+if(evencount<2) return -1;
+return max-min;
