@@ -1,0 +1,26 @@
+public static int isSetEqual(int[] a,int[] b){
+	    int count = 0;
+	    for(int i=0;i<a.length;i++){
+	        count = 0;
+	        for(int j=0;j<b.length;j++){
+	           if(a[i]==b[j]){
+	               count++;
+	           }
+	        }
+	        if(count==0){
+	            return 0;
+	        }
+	    }
+	    for(int i=0;i<b.length;i++){
+	        count = 0;
+	        for(int j=0;j<a.length;j++){
+	           if(b[i]==a[j]){
+	               count++;
+	           }
+	        }
+	        if(count==0){
+	            return 0;
+	        }
+	    }
+	    return 1;
+	}
