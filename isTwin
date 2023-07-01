@@ -1,24 +1,26 @@
 //Consider the prime number 11. Note that 13 is also a prime and 13 – 11 = 2.
-    public static int isNice(int[] arr){
-	    boolean[] primes = new boolean[arr.length];
-         for (int i = 0; i < arr.length; i++) {
-         if (isPrime(arr[i])) {
-            primes[i] = true;
-        }
-    }
-    for (int i = 0; i < arr.length; i++) {
-        if (primes[i]) {
-            int twinPrime1 = arr[i] + 2;
-            int twinPrime2 = arr[i] - 2;
-            boolean foundTwin = false;
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j] == twinPrime1 || arr[j] == twinPrime2) {
-                    foundTwin = true;
-                    break;
+    public static int isTwin(int[] arr){
+	   for (int i = 0; i < arr.length; i++) {
+        if (isPrime(arr[i])) {
+            if (isPrime(arr[i] - 2)) {
+                boolean found = false;
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[j] == arr[i] - 2) {
+                        found = true;
+                        break;
+                    }
                 }
+                if (!found) return 0;
             }
-            if (!foundTwin) {
-                return 0;
+            if (isPrime(arr[i] + 2)) {
+                boolean found = false;
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[j] == arr[i] + 2) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found) return 0;
             }
         }
     }
