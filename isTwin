@@ -1,31 +1,23 @@
 //Consider the prime number 11. Note that 13 is also a prime and 13 – 11 = 2.
-    public static int isTwin(int[] arr){
-	   for (int i = 0; i < arr.length; i++) {
-        if (isPrime(arr[i])) {
-            if (isPrime(arr[i] - 2)) {
-                boolean found = false;
-                for (int j = 0; j < arr.length; j++) {
-                    if (arr[j] == arr[i] - 2) {
-                        found = true;
-                        break;
-                    }
+    public static int isTwin(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                if (!hasTwin(arr, arr[i])) {
+                    return 0;
                 }
-                if (!found) return 0;
-            }
-            if (isPrime(arr[i] + 2)) {
-                boolean found = false;
-                for (int j = 0; j < arr.length; j++) {
-                    if (arr[j] == arr[i] + 2) {
-                        found = true;
-                        break;
-                    }
-                }
-                if (!found) return 0;
             }
         }
+        return 1;
     }
-    return 1;
-	}
+
+    private static boolean hasTwin(int[] arr, int num) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == num + 2 || arr[i] == num - 2) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static int isPrime(int n){
         if(n<=1) return 0;
         for(int i=2;i*i<=n;i++){
