@@ -1,0 +1,17 @@
+public static int isNice(int n){
+	    int maxCount = 0;
+	    int mostRepeating = -1;
+	    int[] arr = new int[10];
+	    while(n>0){
+	        int digit = n%10;
+	        arr[digit]++;
+	        n /= 10;
+	    }
+	    for(int i=0;i<10;i++){
+	        if(arr[i]>maxCount){
+	            maxCount = arr[i];
+	            mostRepeating = i;
+	        }
+	    }
+	    return mostRepeating;
+	}
