@@ -1,15 +1,27 @@
-public static void updateMileage(int[] mileage,int miles){
+import java.util.Arrays;
+public class Main
+{
+    public static void main(String[] args) {
+    int[] mileage = {9, 9, 9, 9, 9, 9, 9, 9, 9, 9}  ;
+    int miles = 13;
+    updateMileage(mileage, miles);
+    System.out.println(Arrays.toString(mileage));
+}
+
+  public static void updateMileage(int[] mileage,int miles){
   for(int i=0;i<miles;i++){
      addOne(mileage);
   }
 }
-public static void addOne(int[] mileage){
-  for(int i = a.length-1;i>=0;i--){
+  public static void addOne(int[] mileage){
+   for(int i = 0;i<mileage.length;i++){
     if(mileage[i]==9){
       mileage[i]=0;
-    }else{
+      }else{
       mileage[i]++;
       break;
     }
   }
+}
+
 }
