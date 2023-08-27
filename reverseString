@@ -1,0 +1,21 @@
+public class Main{
+    public static void main(String[] args){
+        String name = "Dog";
+        String r = reverse(name);
+        System.out.println(r);
+    }
+    public static String reverse(String name){
+        char[] output = name.toCharArray();
+        int left =0;
+        int right = output.length-1;
+        
+        while(left<right){
+            char temp = output[left];
+            output[left] = output[right];
+            output[right] = temp;
+            left++;
+            right--;
+        }
+        return new String(output);
+    }
+}
